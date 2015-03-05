@@ -68,7 +68,7 @@ public class SearchActivity extends ActionBarActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
+                Log.i("INFO", imageResults.toString());
             }
         });
     }
