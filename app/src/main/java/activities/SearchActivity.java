@@ -19,6 +19,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import adapters.ImageResultsAdapter;
 import gridimagesearch.celder.com.gridimagesearch.R;
 import models.ImageResult;
 
@@ -28,6 +29,7 @@ public class SearchActivity extends ActionBarActivity {
     private EditText etQuery;
     private GridView gvResults;
     private ArrayList<ImageResult> imageResults;
+    private ImageResultsAdapter aImageResults;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,10 @@ public class SearchActivity extends ActionBarActivity {
         setContentView(R.layout.activity_search);
         setupViews();
         imageResults = new ArrayList<ImageResult>();
+        // attaches data source to adapter
+        aImageResults = new ImageResultsAdapter(this, imageResults);
+        // link adapter to adapter view (gridview)
+        gvResults.setAdapter(aImageResults);
     }
 
     private void setupViews() {
@@ -64,7 +70,9 @@ public class SearchActivity extends ActionBarActivity {
                 try {
                     imageResultsJson = response.getJSONObject("responseData").getJSONArray("results");
                     imageResults.clear(); // clear existing images from array (on new search)
+                    // changes to adapter do change underlying data
                     imageResults.addAll(ImageResult.fromJSONArray(imageResultsJson));
+                    aImageResults.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

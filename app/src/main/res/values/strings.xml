@@ -6,4 +6,5 @@
     <string name="search_prompt">Enter search query</string>
     <string name="Search" />
     <string name="search_label">Search</string>
+    <string name="image_title_label">Image Title</string>
 </resources>
