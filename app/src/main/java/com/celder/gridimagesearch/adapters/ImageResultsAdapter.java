@@ -1,4 +1,4 @@
-package adapters;
+package com.celder.gridimagesearch.adapters;
 
 /**
  * Created by celder on 3/5/15.
@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import gridimagesearch.celder.com.gridimagesearch.R;
-import models.ImageResult;
+import com.celder.gridimagesearch.models.ImageResult;
 
 public class ImageResultsAdapter extends ArrayAdapter<ImageResult> {
 

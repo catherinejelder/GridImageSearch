@@ -1,11 +1,13 @@
-package activities;
+package com.celder.gridimagesearch.activities;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
 
@@ -19,9 +21,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import adapters.ImageResultsAdapter;
+import com.celder.gridimagesearch.adapters.ImageResultsAdapter;
 import gridimagesearch.celder.com.gridimagesearch.R;
-import models.ImageResult;
+import com.celder.gridimagesearch.models.ImageResult;
 
 
 public class SearchActivity extends ActionBarActivity {
@@ -46,7 +48,23 @@ public class SearchActivity extends ActionBarActivity {
     private void setupViews() {
         etQuery = (EditText) findViewById(R.id.etQuery);
         gvResults = (GridView) findViewById(R.id.gvResults);
+        gvResults.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // launch image display activity
+                // creating an intent
+                Intent i = new Intent(SearchActivity.this, ImageDisplayActivity.class);
+                // get image result to display
+                ImageResult result = imageResults.get(position);
+                // pass image result into intent
+                i.putExtra("url", result.fullUrl); /// need to be either serializable or parseable
+                // i.putExtra("url", result); /// need to be either serializable or parseable
+                // launch the new activity
+                startActivity(i);
+            }
+        });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
