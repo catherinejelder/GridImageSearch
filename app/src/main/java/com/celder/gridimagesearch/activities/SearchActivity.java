@@ -23,7 +23,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import com.celder.gridimagesearch.adapters.ImageResultsAdapter;
-import gridimagesearch.celder.com.gridimagesearch.R;
+import com.celder.gridimagesearch.R;
 import com.celder.gridimagesearch.models.ImageResult;
 
 
@@ -67,7 +67,8 @@ public class SearchActivity extends ActionBarActivity {
         gvResults.setOnScrollListener(new EndlessScrollListener() {
             @Override
             public void onLoadMore(int page, int totalItemsCount) {
-                customLoadMoreDataFromApi(page);
+                Log.d("DEBUG", "on load more: page = " + page + ", totalItemsCount = " + totalItemsCount);
+                customLoadMoreDataFromApi(totalItemsCount);
             }
         });
     }

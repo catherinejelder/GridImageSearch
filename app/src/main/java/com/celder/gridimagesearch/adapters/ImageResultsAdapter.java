@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import gridimagesearch.celder.com.gridimagesearch.R;
+import com.celder.gridimagesearch.R;
 import com.celder.gridimagesearch.models.ImageResult;
 
 public class ImageResultsAdapter extends ArrayAdapter<ImageResult> {

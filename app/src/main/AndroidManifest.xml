@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="gridimagesearch.celder.com.gridimagesearch" >
+    package="com.celder.gridimagesearch" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -21,6 +21,10 @@
         <activity
             android:name="com.celder.gridimagesearch.activities.ImageDisplayActivity"
             android:label="@string/title_activity_image_display" >
+        </activity>
+        <activity
+            android:name="com.celder.gridimagesearch.activities.AdvancedSearchActivity"
+            android:label="@string/title_activity_advanced_search" >
         </activity>
     </application>
 

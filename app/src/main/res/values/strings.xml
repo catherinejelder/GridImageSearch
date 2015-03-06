@@ -8,4 +8,18 @@
     <string name="search_label">Search</string>
     <string name="image_title_label">Image Title</string>
     <string name="title_activity_image_display">Full Image</string>
+    <string name="title_activity_advanced_search">AdvancedSearchActivity</string>
+    <string name="advanced_search_str">Advanced Search Options</string>
+
+    <string name="small">small</string>
+    <string name="medium">medium</string>
+    <string name="large">large</string>
+    <string name="extra_large">extra_large</string>
+
+    <string name="black">black</string>
+    <string name="blue">blue</string>
+    <string name="brown">brown</string>
+    <string name="gray">gray</string>
+    <string name="green">green</string>
+
 </resources>

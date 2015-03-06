@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.celder.gridimagesearch.activities.AdvancedSearchActivity">
+
+    <TextView android:text="@string/advanced_search_str" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/advancedSearchLabel"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Image Size"
+        android:id="@+id/imageSizeLabel"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/advancedSearchLabel" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageSizeSpinner"
+        android:spinnerMode="dropdown"
+        android:prompt="@string/small"
+        android:entries="@array/imageSizeSpinnerItems"
+        android:layout_marginTop="10dp"
+        android:layout_alignTop="@+id/advancedSearchLabel"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/imageSizeLabel"
+        android:layout_toEndOf="@+id/imageSizeLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Color Filter"
+        android:id="@+id/imageColorLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageSizeSpinner" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageColorSpinner"
+        android:prompt="@string/blue"
+        android:spinnerMode="dropdown"
+        android:entries="@array/imageColorSpinnerItems"
+        android:layout_below="@+id/imageSizeSpinner"
+        android:layout_toRightOf="@+id/imageColorLabel"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Image Type"
+        android:id="@+id/imageTypeLabel"
+        android:layout_below="@+id/imageColorSpinner"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageTypeSpinner"
+        android:layout_below="@+id/imageColorSpinner"
+        android:spinnerMode="dropdown"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/imageTypeLabel"
+        android:layout_toEndOf="@+id/imageTypeLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Site Filter"
+        android:id="@+id/siteFilterLabel"
+        android:layout_below="@+id/imageTypeSpinner"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/siteFilterQuery"
+        android:layout_below="@+id/imageTypeSpinner"
+        android:layout_toRightOf="@+id/siteFilterLabel"
+        android:layout_alignRight="@+id/imageTypeSpinner"
+        android:layout_alignEnd="@+id/imageTypeSpinner"
+        android:text="espn.com" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/saveButton"
+        android:layout_below="@+id/siteFilterQuery"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp" />
+
+</RelativeLayout>
