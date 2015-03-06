@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="imageSizeSpinnerItems">
+        <item>any</item>
         <item>small</item>
         <item>medium</item>
         <item>large</item>
-        <item>extra_large</item>
+        <item>extra large</item>
     </string-array>
     <string-array name="imageColorSpinnerItems">
+        <item>any</item>
         <item>black</item>
         <item>blue</item>
         <item>brown</item>
@@ -14,6 +16,7 @@
         <item>green</item>
     </string-array>
     <string-array name="imageTypeSpinnerItems">
+        <item>any</item>
         <item>faces</item>
         <item>photo</item>
         <item>clip art</item>

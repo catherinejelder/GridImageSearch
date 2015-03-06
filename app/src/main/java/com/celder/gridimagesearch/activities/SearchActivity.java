@@ -15,11 +15,14 @@ import com.celder.gridimagesearch.models.EndlessScrollListener;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.http.Header;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import com.celder.gridimagesearch.adapters.ImageResultsAdapter;
@@ -117,7 +120,30 @@ public class SearchActivity extends ActionBarActivity {
         // Toast.makeText(this, "Search for: " + query, Toast.LENGTH_SHORT).show();
 
         AsyncHttpClient client = new AsyncHttpClient();
-        String searchUrl = "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=" + query + "&rsz=8";
+        // check for image filters
+        ArrayList<String> filters = readImageFilters();
+        String imageSize = filters.get(0);
+        String imageColor = filters.get(1);
+        String imageType = filters.get(2);
+        String siteFilter = filters.get(3);
+
+        String searchUrl = "https://ajax.googleapis.com/ajax/services/search/images?v=1.0";
+        if (!imageSize.equals("any")) {
+            searchUrl += "&imgsz=" + imageSize; // TODO: xlarge
+        }
+        if (!imageColor.equals("any")) {
+            searchUrl += "&imgcolor=" + imageColor;
+        }
+        if (!imageType.equals("any")) {
+            searchUrl += "&imgtype=" + imageType; // TODO: clipart, lineart
+        }
+        if (!siteFilter.isEmpty()) {
+            searchUrl += "&as_sitesearch=" + siteFilter;
+        }
+        searchUrl += "&q=" + query + "&rsz=8";
+
+        Log.d("DEBUG", "request url: " + searchUrl);
+
         client.get(searchUrl, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -136,6 +162,19 @@ public class SearchActivity extends ActionBarActivity {
                 Log.i("INFO", imageResults.toString());
             }
         });
+    }
+
+    private ArrayList<String> readImageFilters() {
+        ArrayList<String> filterItems;
+        File filesDir = getFilesDir();
+        File filterFile = new File(filesDir, "imagefilters.txt");
+        try {
+            filterItems = new ArrayList<String>(FileUtils.readLines(filterFile));
+        } catch (IOException e) {
+            filterItems = new ArrayList<String>();
+        }
+        Log.i("INFO", "reading image filters: " + filterItems.toString());
+        return filterItems;
     }
 
     @Override

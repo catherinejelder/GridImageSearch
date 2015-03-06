@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:text="Image Size"
         android:id="@+id/imageSizeLabel"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="35dp"
         android:layout_alignTop="@+id/advancedSearchLabel"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -29,10 +29,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageSizeSpinner"
         android:spinnerMode="dropdown"
-        android:prompt="@string/small"
         android:entries="@array/imageSizeSpinnerItems"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="35dp"
         android:layout_alignTop="@+id/advancedSearchLabel"
+        android:layout_marginLeft="10dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_toRightOf="@+id/imageSizeLabel"
@@ -52,10 +52,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageColorSpinner"
-        android:prompt="@string/blue"
         android:spinnerMode="dropdown"
         android:entries="@array/imageColorSpinnerItems"
         android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
         android:layout_below="@+id/imageSizeSpinner"
         android:layout_toRightOf="@+id/imageColorLabel"
         android:layout_alignParentRight="true"
@@ -78,13 +78,13 @@
         android:layout_below="@+id/imageColorSpinner"
         android:spinnerMode="dropdown"
         android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_toRightOf="@+id/imageTypeLabel"
         android:layout_toEndOf="@+id/imageTypeLabel"
         android:entries="@array/imageTypeSpinnerItems"
-        android:focusable="true"
-        android:prompt="@string/faces" />
+        android:focusable="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -101,11 +101,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/siteFilterQuery"
         android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
         android:layout_below="@+id/imageTypeSpinner"
         android:layout_toRightOf="@+id/siteFilterLabel"
         android:layout_alignRight="@+id/imageTypeSpinner"
-        android:layout_alignEnd="@+id/imageTypeSpinner"
-        android:text="espn.com" />
+        android:layout_alignEnd="@+id/imageTypeSpinner" />
 
     <Button
         android:layout_width="wrap_content"
