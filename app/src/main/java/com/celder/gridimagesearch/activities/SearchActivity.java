@@ -144,9 +144,18 @@ public class SearchActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        Log.i("INFO", "SearchActivity.onOptionsItemSelected called, with id num: " + id);
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Log.i("INFO", "action_settings selected");
+
+            // launch advanced search activity
+            // creating an intent
+            Intent i = new Intent(SearchActivity.this, AdvancedSearchActivity.class);
+            // launch the new activity
+            startActivity(i);
+
             return true;
         }
 

@@ -18,7 +18,8 @@
         android:layout_height="wrap_content"
         android:text="Image Size"
         android:id="@+id/imageSizeLabel"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_alignTop="@+id/advancedSearchLabel"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/advancedSearchLabel" />
@@ -30,7 +31,7 @@
         android:spinnerMode="dropdown"
         android:prompt="@string/small"
         android:entries="@array/imageSizeSpinnerItems"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:layout_alignTop="@+id/advancedSearchLabel"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -42,6 +43,7 @@
         android:layout_height="wrap_content"
         android:text="Color Filter"
         android:id="@+id/imageColorLabel"
+        android:layout_marginTop="25dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imageSizeSpinner" />
@@ -53,6 +55,7 @@
         android:prompt="@string/blue"
         android:spinnerMode="dropdown"
         android:entries="@array/imageColorSpinnerItems"
+        android:layout_marginTop="25dp"
         android:layout_below="@+id/imageSizeSpinner"
         android:layout_toRightOf="@+id/imageColorLabel"
         android:layout_alignParentRight="true"
@@ -63,6 +66,7 @@
         android:layout_height="wrap_content"
         android:text="Image Type"
         android:id="@+id/imageTypeLabel"
+        android:layout_marginTop="25dp"
         android:layout_below="@+id/imageColorSpinner"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -73,16 +77,21 @@
         android:id="@+id/imageTypeSpinner"
         android:layout_below="@+id/imageColorSpinner"
         android:spinnerMode="dropdown"
+        android:layout_marginTop="25dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_toRightOf="@+id/imageTypeLabel"
-        android:layout_toEndOf="@+id/imageTypeLabel" />
+        android:layout_toEndOf="@+id/imageTypeLabel"
+        android:entries="@array/imageTypeSpinnerItems"
+        android:focusable="true"
+        android:prompt="@string/faces" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Site Filter"
         android:id="@+id/siteFilterLabel"
+        android:layout_marginTop="25dp"
         android:layout_below="@+id/imageTypeSpinner"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -91,6 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/siteFilterQuery"
+        android:layout_marginTop="25dp"
         android:layout_below="@+id/imageTypeSpinner"
         android:layout_toRightOf="@+id/siteFilterLabel"
         android:layout_alignRight="@+id/imageTypeSpinner"
@@ -104,6 +114,8 @@
         android:id="@+id/saveButton"
         android:layout_below="@+id/siteFilterQuery"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp" />
+        android:layout_marginTop="25dp"
+        android:nestedScrollingEnabled="true"
+        android:onClick="onFilterSave" />
 
 </RelativeLayout>

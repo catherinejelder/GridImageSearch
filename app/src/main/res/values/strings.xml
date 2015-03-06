@@ -14,12 +14,17 @@
     <string name="small">small</string>
     <string name="medium">medium</string>
     <string name="large">large</string>
-    <string name="extra_large">extra_large</string>
+    <string name="extra_large">extra large</string>
 
     <string name="black">black</string>
     <string name="blue">blue</string>
     <string name="brown">brown</string>
     <string name="gray">gray</string>
     <string name="green">green</string>
+
+    <string name="faces">faces</string>
+    <string name="photo">photo</string>
+    <string name="clip_art">clip art</string>
+    <string name="line_art">line art</string>
 
 </resources>
